@@ -2,14 +2,61 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="assets/favicon.ico" rel="shortcut icon" />
+   <link rel="stylesheet" href="css/owfont-regular.css" />
+   <link rel="stylesheet" href="css/style.css" />
+   <title>momentum</title>
+   <!--<script type="text/javascript" src="data.json"></script>-->
 </head>
 
 <body>
-   <h1>hi</h1>
+   <header class="header">
+      <div class="player">
+         <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+         </div>
+         <ul class="play-list"></ul>
+      </div>
+      <div class="weather">
+         <input type="text" placeholder="Enter your city" value="" class="city" />
+         <i class="weather-icon owf"></i>
+         <div class="weather-error"></div>
+         <div class="description-container">
+            <span class="temperature"></span>
+            <span class="weather-description"></span>
+         </div>
+         <div class="wind"></div>
+         <div class="humidity"></div>
+      </div>
+   </header>
+   <main class="main">
+      <div class="slider-icons">
+         <button class="slide-prev slider-icon"></button>
+         <button class="slide-next slider-icon"></button>
+      </div>
+      <!--здесь мы выводим время (часы, минуты, секунды)-->
+      <time class="time"></time>
+      <!--здесь мы выводим дату  (день недели,месяц,число)-->
+      <date class="date"></date>
+      <div class="greeting-container">
+         <!--пожелание доброго времени суток-->
+         <span class="greeting"></span>
+         <!--ввод имени-->
+         <input type="text" placeholder="Enter your name" class="name" id="name" />
+      </div>
+   </main>
+   <footer class="footer">
+      <button class="change-quote"></button>
+      <div>
+         <div class="quote"></div>
+         <div class="author"></div>
+      </div>
+   </footer>
+   <script src="js/script.js"></script>
+   <script src="js/data.json"></script>
 </body>
-
 </html>
