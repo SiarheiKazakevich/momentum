@@ -304,3 +304,6 @@ function playPrev() {
 trakPrev.addEventListener('click', playPrev);
 trakNext.addEventListener('click', playNext);
 
+/*---------finish plaer-------*/
+
+
