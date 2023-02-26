@@ -252,32 +252,27 @@ async function getQuotes() {
 getQuotes();
 changeQuote.addEventListener('click', getQuotes);
 
-/*----------pleer-------------------*//**/
-async function load() {
-   let playList = await import('../playList.js');
-}
-load();
-console.log(playList);
-/*import playList from './playList.js';
- console.log(playList);*/
+/*----------pleer-------------------*/
 
 let isPlay = false;
 const play = document.querySelector('.play');
 const pause = document.querySelector('.pause');
-let audio = new Audio; //(Object.values(playList[playNum])[1]);
+let audio = new Audio;
 let playNum = 0;
-
+const playList = ['Aqua Caelestis', 'Ennio Morricone', 'River Flows In You', 'Summer Wind']
+const trakPrev = document.querySelector('.play-prev');
+const trakNext = document.querySelector('.play-next');
 
 function playAudio() {
-   audio.src = playList[playNum].src;
+   //  audio.src = ('../assets/sounds/Aqua Caelestis.mp3');
+   /*audio.src = `assets/sounds/${song}.mp3`;*/
+   audio.src = `../assets/sounds/${(playList[playNum])}.mp3`;
    audio.currentTime = 0;
    if (!isPlay) {
       audio.play();
       isPlay = true;
       play.classList.add('pause')
-      /*audio.src = ('../assets/sounds/Aqua Caelestis.mp3');
-      audio.currentTime = 0;
-      audio.play();*/
+
    } else {
       audio.pause();
       isPlay = false;
@@ -285,44 +280,27 @@ function playAudio() {
    }
 
 }
-
 play.addEventListener('click', playAudio);
-//pause.addEventListener('click', pauseAudio);
-function toggleBtn() {
-   button.classList.toggle('pause');
-}
-button.addEventListener('click', toggleBtn);
-
 
 /*--------------перелистывание------*/
 
-
-
-
-
 function playNext() {
-   //return randomNum <= 20 ? randomNum += 1 : randomNum = 1;
-   if (playNum <= 4) {
-      playNum += 1;
-   } else {
-      playNum = 1;
+   playNum++;
+   if (playNum > playList.length - 1) {
+      playNum = 0
    }
-   playAudio;
+   playAudio(playList[playNum]);
 }
 
 function playPrev() {
-   //return randomNum <= 20 ? randomNum += 1 : randomNum = 1;
-   if (playNum >= 1) {
-      playNum -= 1;
-   } else {
-      playNum = 4;
+   playNum--;
+   if (playNum < 0) {
+      playNum = playList.length - 1;
    }
-   playAudio;
+   playAudio(playList[playNum]);
 }
 
-const trakPrev = document.querySelector('.play-prev');
-trakPrev.addEventListener('click', playPrev);
 
-const trakNext = document.querySelector('.play-next');
+trakPrev.addEventListener('click', playPrev);
 trakNext.addEventListener('click', playNext);
 
