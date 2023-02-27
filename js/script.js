@@ -266,7 +266,7 @@ const trakNext = document.querySelector('.play-next');
 function playAudio() {
    //  audio.src = ('../assets/sounds/Aqua Caelestis.mp3');
    /*audio.src = `assets/sounds/${song}.mp3`;*/
-   audio.src = `../assets/sounds/${(playList[playNum])}.mp3`;
+   audio.src = `./assets/sounds/${(playList[playNum])}.mp3`;
    audio.currentTime = 0;
    if (!isPlay) {
       audio.play();
